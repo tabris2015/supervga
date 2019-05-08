@@ -2,6 +2,7 @@
 #include <vga.h>
 #include <math.h>
 #include "letras.h"
+#include "screen.h"
 
 // int maxx = 1024, maxy = 768;
 // int midx = maxx/2, midy = maxy/2;
@@ -56,6 +57,8 @@
 
 int main(void)
 {
+    vga::Screen screen;
+    
     // int i;
     // float x,y;
     // float x1,y1,x2,y2;
