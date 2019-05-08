@@ -58,21 +58,26 @@
 int main(void)
 {
     vga::Screen screen;
-    
+
     // int i;
     // float x,y;
     // float x1,y1,x2,y2;
 
     // vga_init();
     // vga_setmode(G1024x768x256);
-
+    int maxx = screen.getMaxX();
+    int maxy = screen.getMaxY();
+    
+    int midx = screen.getMidX();
+    int midy = screen.getMidY();
+    
     // cuadro(1,1,maxx-1,maxy-40,2);
-    // letra(midx-3,45,flechaU);
-    // letra(maxx-12,midy-3,flechaR);
-    // linea(midx,5,midx,maxy-45,14);    // eje y
-    // linea(5,midy,maxx-5,midy,14);     // eje x
-    // letra(midx+5,45,Y);
-    // letra(maxx-12,midy+5,X);
+    screen.letra(midx-3,45,flechaU);
+    screen.letra(maxx-12,midy-3,flechaR);
+    screen.linea(vga::Punto(midx,5),vga::Punto(midx,maxy-45),14);    // eje y
+    screen.linea(vga::Punto(5,midy),vga::Punto(maxx-5,midy),14);     // eje x
+    screen.letra(midx+5,45,Y);
+    screen.letra(maxx-12,midy+5,X);
 
     // x1 = 0; y1 = seno(x1);
     // for(i=0; i<=72; i++)

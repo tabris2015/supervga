@@ -26,7 +26,12 @@ private:
 
 public:
     Screen(int max_x=1024, int max_y=768);
-    void letra(int col, int fil, const char * punA);
+    int getMaxX(){return max_x_;}
+    int getMaxY(){return max_y_;}
+    
+    int getMidX(){return mid_x_;}
+    int getMidY(){return mid_y_;}
+    void letra(int col, int fil, const unsigned char * punA);
     void linea(Punto p1, Punto p2, int color);
     void cuadro(Punto p1, Punto p2, int color);
     std::vector<Punto> generarSeno(int amplitud, int x_inicial, int x_final, int delta, int offset_x, int offset_y);

@@ -1,14 +1,14 @@
 #include "screen.h"
 using namespace vga;
 
-Screen::Screen(int max_x, int max_y)
+Screen::Screen(int max_x, int max_y): max_x_(max_x), max_y_(max_y), mid_x_(max_x_/2), mid_y_(max_y_/2)
 {
     vga_init();
     vga_setmode(G1024x768x256);
 
 }
 
-void Screen::letra(int col, int fil, const char * punA)
+void Screen::letra(int col, int fil, const unsigned char * punA)
 {
     char aux;
     int x,y;
