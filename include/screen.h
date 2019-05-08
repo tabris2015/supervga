@@ -36,6 +36,7 @@ public:
     void cuadro(Punto p1, Punto p2, int color);
     std::vector<Punto> generarSeno(int amplitud, int x_inicial, int x_final, int delta, int offset_x, int offset_y);
     std::vector<Punto> generarCoseno(int amplitud, int x_inicial, int x_final, int delta, int offset_x, int offset_y);
+    void dibujar(Punto& punto, int color);
     void dibujar(std::vector<Punto>& puntos, int color);
     ~Screen();
 };

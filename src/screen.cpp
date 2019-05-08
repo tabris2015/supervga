@@ -61,6 +61,11 @@ std::vector<Punto> Screen::generarCoseno(int amplitud, int x_inicial, int x_fina
     }
     return resultado;
 }
+void Screen::dibujar(Punto& punto, int color)
+{
+    vga_setcolor(color);
+    vga_drawpixel(punto.x, punto.y);
+}
 void Screen::dibujar(std::vector<Punto>& puntos, int color)
 {
     for(std::vector<Punto>::iterator it_p = puntos.begin(); it_p != puntos.end() - 1; ++it_p)
