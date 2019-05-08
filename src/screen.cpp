@@ -43,9 +43,10 @@ void Screen::cuadro(Punto p1, Punto p2, int color)
 std::vector<Punto> Screen::generarSeno(int amplitud, int x_inicial, int x_final, int delta, int offset_x, int offset_y)
 {
     std::vector<Punto> resultado;
-    for(auto x = x_inicial; x < x_final; x += delta)
+    for(int x = x_inicial; x < x_final; x += delta)
     {
-        resultado.emplace_back(x + offset_x, floor(amplitud*sin(M_PI*x/180)) + offset_y);
+	Punto aux(x + offset_x, floor(amplitud * sin(M_PI * x / 180)) + offset_y);
+        resultado.push_back(aux);
     }
     return resultado;
 }
@@ -53,15 +54,16 @@ std::vector<Punto> Screen::generarSeno(int amplitud, int x_inicial, int x_final,
 std::vector<Punto> Screen::generarCoseno(int amplitud, int x_inicial, int x_final, int delta, int offset_x, int offset_y)
 {
     std::vector<Punto> resultado;
-    for(auto x = x_inicial; x < x_final; x += delta)
+    for(int x = x_inicial; x < x_final; x += delta)
     {
-        resultado.emplace_back(x + offset_x, floor(amplitud*cos(M_PI*x/180)) + offset_y);
+        Punto aux(x + offset_x, floor(amplitud*cos(M_PI*x/180)) + offset_y);
+	resultado.push_back(aux);
     }
     return resultado;
 }
 void Screen::dibujar(std::vector<Punto>& puntos, int color)
 {
-    for(auto it_p = puntos.begin(); it_p != puntos.end(); ++it_p)
+    for(std::vector<Punto>::iterator it_p = puntos.begin(); it_p != puntos.end(); ++it_p)
     {
         // dibujar una linea entre el punto actual y el punto siguiente
         linea(*it_p, *(it_p + 1), color);
