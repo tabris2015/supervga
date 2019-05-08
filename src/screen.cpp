@@ -63,7 +63,7 @@ std::vector<Punto> Screen::generarCoseno(int amplitud, int x_inicial, int x_fina
 }
 void Screen::dibujar(std::vector<Punto>& puntos, int color)
 {
-    for(std::vector<Punto>::iterator it_p = puntos.begin(); it_p != puntos.end(); ++it_p)
+    for(std::vector<Punto>::iterator it_p = puntos.begin(); it_p != puntos.end() - 1; ++it_p)
     {
         // dibujar una linea entre el punto actual y el punto siguiente
         linea(*it_p, *(it_p + 1), color);
