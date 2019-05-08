@@ -30,8 +30,7 @@ int main(void)
     screen.dibujar(seno, 12);
     screen.dibujar(coseno, 33);
 
-    vga_getch();
-    vga_setmode(TEXT);
 
+    screen.waitKey();
     return EXIT_SUCCESS;
 }

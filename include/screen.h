@@ -26,6 +26,7 @@ private:
 
 public:
     Screen(int max_x=1024, int max_y=768);
+    int waitKey(){return vga_getch();}
     int getMaxX(){return max_x_;}
     int getMaxY(){return max_y_;}
     
