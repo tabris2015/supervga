@@ -17,7 +17,7 @@ int main(void)
     int midx = screen.getMidX();
     int midy = screen.getMidY();
     
-    screen.cuadro(Punto(1,1),Punto(maxx-1,maxy-40),2);
+    screen.cuadro(Punto(5,5),Punto(maxx-5,maxy-40),2);
     screen.letra(midx-3,45,flechaU);
     screen.letra(maxx-12,midy-3,flechaR);
     screen.linea(Punto(midx,5),Punto(midx,maxy-45),14);    // eje y
@@ -25,9 +25,10 @@ int main(void)
     screen.letra(midx+5,45,Y);
     screen.letra(maxx-12,midy+5,X);
 
-    std::vector<Punto> seno = screen.generarSeno(200, 0, 360, 5, midx, midy);
+    std::vector<Punto> seno = screen.generarSeno(200, -90, 360, 5, midx, midy);
     std::vector<Punto> coseno = screen.generarCoseno(150, 0, 360, 5, midx, midy);
-    screen.dibujar(seno, 33);
+    screen.dibujar(seno, 12);
+    screen.dibujar(coseno, 33);
 
     vga_getch();
     vga_setmode(TEXT);

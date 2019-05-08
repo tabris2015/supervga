@@ -35,10 +35,10 @@ void Screen::linea(Punto p1, Punto p2, int color)
 
 void Screen::cuadro(Punto p1, Punto p2, int color)
 {
-    linea(p1,p1,color);
-    linea(p1,p2,color);
-    linea(p2,p2,color);
-    linea(p2,p1,color);
+    linea(p1,Punto(p2.x,p1.y),color);
+    linea(Punto(p2.x,p1.y),p2,color);
+    linea(p2,Punto(p1.x,p2.y),color);
+    linea(Punto(p1.x,p2.y),p1,color);
 }
 std::vector<Punto> Screen::generarSeno(int amplitud, int x_inicial, int x_final, int delta, int offset_x, int offset_y)
 {
