@@ -54,10 +54,11 @@
 //     y = floor(200*cos(M_PI*x/180));
 //     return y;
 // }
-
+using vga::Punto;
+using vga::Screen;
 int main(void)
 {
-    vga::Screen screen;
+    Screen screen;
 
     // int i;
     // float x,y;
@@ -74,11 +75,14 @@ int main(void)
     // cuadro(1,1,maxx-1,maxy-40,2);
     screen.letra(midx-3,45,flechaU);
     screen.letra(maxx-12,midy-3,flechaR);
-    screen.linea(vga::Punto(midx,5),vga::Punto(midx,maxy-45),14);    // eje y
-    screen.linea(vga::Punto(5,midy),vga::Punto(maxx-5,midy),14);     // eje x
+    screen.linea(Punto(midx,5),Punto(midx,maxy-45),14);    // eje y
+    screen.linea(Punto(5,midy),Punto(maxx-5,midy),14);     // eje x
     screen.letra(midx+5,45,Y);
     screen.letra(maxx-12,midy+5,X);
 
+    std::vector<Punto> seno = screen.generarSeno(200, 0, 360, 5, midx, midy);
+    
+    screen.dibujar(seno, 12);
     // x1 = 0; y1 = seno(x1);
     // for(i=0; i<=72; i++)
     // {
