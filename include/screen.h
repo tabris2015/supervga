@@ -10,6 +10,7 @@ struct Punto
 {
     int x;
     int y;
+    Punto(int x, int y):x(x), y(y){};
 };
 
 
